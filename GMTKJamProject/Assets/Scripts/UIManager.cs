@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour {
   public TMP_Text fundsAmountText;
   public TMP_Text handsLevel;
 
-  private void Awake() {
+  void Awake() {
     if (Instance && Instance != this) {
       Debug.LogError($"Duplicate {name} singleton instantiated. Destroying.");
       Destroy(this);
