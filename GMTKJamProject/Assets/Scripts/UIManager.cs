@@ -11,8 +11,6 @@ public class UIManager : MonoBehaviour {
   public TMP_Text fundsAmountText;
   public TMP_Text handsLevel;
 
-  public List<string> handsLevelNames;
-
   void Awake() {
     if (Instance && Instance != this) {
       Debug.LogError($"Duplicate {name} singleton instantiated. Destroying.");
@@ -24,5 +22,9 @@ public class UIManager : MonoBehaviour {
 
   public void SetFundsAmount(float amount) {
     fundsAmountText.SetText($"${amount:F0}");
+  }
+
+  public void SetHandsLevel(string name, float rawValue) {
+    handsLevel.SetText($"{name} ({rawValue:F2})");
   }
 }

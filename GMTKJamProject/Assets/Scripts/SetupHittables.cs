@@ -21,15 +21,16 @@ public class SetupHittables : MonoBehaviour {
 
       rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
-      if (!hittable.TryGetComponent(out HittableThing hittableThing)) {
-        hittableThing = hittable.AddComponent<HittableThing>();
-        hittableThing.playerCashOffsetOnDeath = Random.Range(50f, 150f);
+      if (!hittable.TryGetComponent(out HittableThing thing)) {
+        thing = hittable.AddComponent<HittableThing>();
+        thing.playerHandsPowerOffsetOnDeath = Random.Range(0.25f, 0.75f);
+        thing.playerCashOffsetOnDeath = Random.Range(50f, 150f);
         hittableThingAdded++;
       }
 
-      hittableThing.OnHittableDeath += (_, hittable) => AddExplosion(hittable);
-      hittableThing.OnHittableDeath += (_, _) => playerJazzHands.IncreaseHandPower(1f);
-      hittableThing.OnHittableDeath += (_, _) => _gameManager.OffsetPlayerCash(hittableThing.playerCashOffsetOnDeath);
+      thing.OnHittableDeath += (_, hittable) => AddExplosion(hittable);
+      thing.OnHittableDeath += (_, _) => _gameManager.OffsetPlayerHandsPower(thing.playerHandsPowerOffsetOnDeath);
+      thing.OnHittableDeath += (_, _) => _gameManager.OffsetPlayerCash(thing.playerCashOffsetOnDeath);
     }
 
     Debug.Log(
