@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 
 using UnityEngine;
 
@@ -11,6 +10,8 @@ public class HittableThing : MonoBehaviour {
 
   public float onCollideAddRelativeForcePower = 300f;
   public float onCollideAddUpwardsForcePower = 200f;
+
+  public float playerCashOffsetOnDeath = 50f;
 
   public event EventHandler<GameObject> OnHittableDeath;
 

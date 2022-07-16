@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using TMPro;
 
 using UnityEngine;
@@ -9,6 +11,8 @@ public class UIManager : MonoBehaviour {
   public TMP_Text fundsAmountText;
   public TMP_Text handsLevel;
 
+  public List<string> handsLevelNames;
+
   void Awake() {
     if (Instance && Instance != this) {
       Debug.LogError($"Duplicate {name} singleton instantiated. Destroying.");
@@ -16,5 +20,9 @@ public class UIManager : MonoBehaviour {
     } else {
       Instance = this;
     }
+  }
+
+  public void SetFundsAmount(float amount) {
+    fundsAmountText.SetText($"${amount:F0}");
   }
 }

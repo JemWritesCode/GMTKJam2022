@@ -4,7 +4,11 @@ public class SetupHittables : MonoBehaviour {
   public JazzHands playerJazzHands;
   public GameObject hittableDeathExplosion;
 
+  GameManager _gameManager;
+
   void Awake() {
+    _gameManager = GameManager.Instance;
+
     GameObject[] hittables = GameObject.FindGameObjectsWithTag("Hittable");
     int rigidBodyAdded = 0;
     int hittableThingAdded = 0;
@@ -19,11 +23,13 @@ public class SetupHittables : MonoBehaviour {
 
       if (!hittable.TryGetComponent(out HittableThing hittableThing)) {
         hittableThing = hittable.AddComponent<HittableThing>();
+        hittableThing.playerCashOffsetOnDeath = Random.Range(50f, 150f);
         hittableThingAdded++;
       }
 
       hittableThing.OnHittableDeath += (_, hittable) => AddExplosion(hittable);
       hittableThing.OnHittableDeath += (_, _) => playerJazzHands.IncreaseHandPower(1f);
+      hittableThing.OnHittableDeath += (_, _) => _gameManager.OffsetPlayerCash(hittableThing.playerCashOffsetOnDeath);
     }
 
     Debug.Log(
