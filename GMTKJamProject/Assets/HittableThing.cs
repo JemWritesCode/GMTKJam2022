@@ -14,13 +14,15 @@ public class HittableThing : MonoBehaviour {
   }
 
   private void OnCollisionEnter(Collision collision) {
-    if (collision.gameObject.CompareTag("Player")) {
-      Vector3 force = collision.contacts[0].point - transform.position;
-      force = force.normalized;
-      force = force * -onCollideAddRelativeForcePower + Vector3.up * onCollideAddUpwardsForcePower;
-
-      Debug.Log($"{collision.gameObject.name} hit me with {collision.contactCount} contacts, adding force: {force}");
-      _rigidBody.AddForce(force);
+    if (!collision.gameObject.CompareTag("Player")) {
+      return;
     }
+
+    Vector3 force = collision.contacts[0].point - transform.position;
+    force = force.normalized;
+    force = force * -onCollideAddRelativeForcePower + Vector3.up * onCollideAddUpwardsForcePower;
+
+    Debug.Log($"{collision.gameObject.name} hit me with {collision.contactCount} contacts, adding force: {force}");
+    _rigidBody.AddForce(force);
   }
 }
