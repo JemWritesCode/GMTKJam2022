@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour {
   int playerHandsLevel = 0;
   float playerHandsPower = 0f;
 
+  public Rigidbody diceRigidbody;
+
   void Awake() {
     if (Instance && Instance != this) {
       Debug.LogError($"Duplicate {name} singleton instantiated. Destroying.");
