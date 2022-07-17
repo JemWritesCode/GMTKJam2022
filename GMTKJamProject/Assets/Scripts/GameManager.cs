@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
   public static GameManager Instance { get; private set; }
 
   public JazzHands playerJazzHands;
+  public AudioSource redditManAudioSource;
 
   public float handsPowerInitial = 1f;
   public float handsPowerGrowth = 1.5f;
@@ -91,6 +92,8 @@ public class GameManager : MonoBehaviour {
 
     Debug.Log($"Player level now: {playerHandsLevel}");
     RollDiceForFun();
+
+    redditManAudioSource.Play();
   }
 
   public void RollDiceForFun() {
