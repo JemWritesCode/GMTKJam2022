@@ -9,15 +9,20 @@ public class RedditManOnHit : MonoBehaviour {
 
   void Update() {
     if (Vector3.Distance(transform.position, player.transform.position) <= triggerRadius) {
-      //cameraController.cameraTarget = transform;
-      TogglePanToDude();
-      UIManager.Instance.ToggleInvestFundsPanel(true);
+      if (!alreadyPanned) {
+        TogglePanToDude();
+        GameManager.Instance.ToggleInvestFundsPanel(true);
+      }
+
+      if (Input.GetKeyDown(KeyCode.E)) {
+        GameManager.Instance.TryToLevelUp();
+      }
+
     } else {
-      //cameraController.cameraTarget = player.transform;
       cameraController.enabled = true;
       panToDude = false;
       alreadyPanned = false;
-      UIManager.Instance.ToggleInvestFundsPanel(false);
+      GameManager.Instance.ToggleInvestFundsPanel(false);
     }
   }
 

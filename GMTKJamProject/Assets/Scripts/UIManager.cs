@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour {
   }
 
   void Start() {
-    ToggleInvestFundsPanel(false);
+    ShowInvestFundsPanel(false);
   }
 
   public void SetFundsAmount(float amount) {
@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour {
     handsLevel.SetText($"{name} ({rawValue:F2})");
   }
 
-  public void ToggleInvestFundsPanel(bool toggle) {
+  public void ShowInvestFundsPanel(bool toggle) {
     investFundsPanel.SetActive(toggle);
   }
 

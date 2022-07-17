@@ -22,9 +22,11 @@ public class GameManager : MonoBehaviour {
         "Diamond hands"
       };
 
-  float playerCash = 0f;
-  int playerHandsLevel = 0;
-  float playerHandsPower = 0f;
+  public float playerCash = 0f;
+  public int playerHandsLevel = 0;
+  public float playerHandsPower = 0f;
+
+  public float handsLevelUpCost = 0f;
 
   public Rigidbody diceRigidbody;
 
@@ -71,5 +73,69 @@ public class GameManager : MonoBehaviour {
 
     UIManager.Instance.SetHandsLevel(
         handsLevelNames[Mathf.Clamp(playerHandsLevel, 0, handsLevelNames.Count - 1)], playerHandsPower);
+  }
+
+  public void TryToLevelUp() {
+    if (playerCash < handsLevelUpCost) {
+      Debug.Log($"Not enough cash.");
+      return;
+    }
+
+    Debug.Log($"Enough cash.");
+
+    OffsetPlayerCash(-handsLevelUpCost);
+    SetPlayerHandsLevel(playerHandsLevel + 1);
+    SetPlayerHandsPower(playerHandsLevel * 1f);
+    handsLevelUpCost = GetLevelUpCost(playerHandsLevel);
+    SetupInvestFundsPanel();
+
+    Debug.Log($"Player level now: {playerHandsLevel}");
+  }
+
+  public void ToggleInvestFundsPanel(bool toggle) {
+    if (toggle) {
+      SetupInvestFundsPanel();
+    }
+
+    UIManager.Instance.ShowInvestFundsPanel(toggle);
+  }
+
+  void SetupInvestFundsPanel() {
+    string text =
+        $"Buy <color=green>{GetLevelUpPrompTextStock(playerHandsLevel)}</color> "
+            + $"for $<color=red>{handsLevelUpCost}</color>?\n";
+
+    text += playerCash < handsLevelUpCost ? "Not enough tendies. :(" : "#yolo [e]";
+
+    UIManager.Instance.SetInvestFundsPromptText(text);
+  }
+
+  // For easy adjustment per level.
+  static float GetLevelUpCost(int level) {
+    return level switch {
+      0 => 0f,
+      1 => 100f,
+      2 => 200f,
+      3 => 300f,
+      4 => 400f,
+      5 => 500f,
+      6 => 600f,
+      7 => 700f,
+      _ => 888f,
+    };
+  }
+
+  static string GetLevelUpPrompTextStock(int level) {
+    return level switch {
+      0 => "free hands",
+      1 => "AMC",
+      2 => "BBBY",
+      3 => "NOK",
+      4 => "KOSS",
+      5 => "BB",
+      6 => "SPCE",
+      7 => "GME",
+      _ => "???",
+    };
   }
 }
