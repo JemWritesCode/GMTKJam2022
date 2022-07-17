@@ -90,6 +90,15 @@ public class GameManager : MonoBehaviour {
     SetupInvestFundsPanel();
 
     Debug.Log($"Player level now: {playerHandsLevel}");
+    RollDiceForFun();
+  }
+
+  public void RollDiceForFun() {
+    Vector3 force = new(Random.Range(100f, 300f), Random.Range(100f, 300f), Random.Range(100f, 300f));
+    Debug.Log($"Adding torque {force} to dice.");
+
+    diceRigidbody.AddTorque(force, ForceMode.Acceleration);
+    diceRigidbody.AddForce(Vector3.up * Random.Range(200f, 400f), ForceMode.Acceleration);
   }
 
   public void ToggleInvestFundsPanel(bool toggle) {
