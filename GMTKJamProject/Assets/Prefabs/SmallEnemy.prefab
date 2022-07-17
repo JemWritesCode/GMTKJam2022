@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4960979832769323480}
   - component: {fileID: 2828207710718576891}
+  - component: {fileID: 2317432678393939465}
   m_Layer: 0
   m_Name: SmallEnemy
   m_TagString: Untagged
@@ -47,6 +48,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ATMToControl: {fileID: 4960979832769323480}
+--- !u!65 &2317432678393939465
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276495784971538745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3167162, y: 0.35896045, z: 0.27047804}
+  m_Center: {x: -0.020093882, y: 0.19451204, z: 0.002189526}
 --- !u!1 &4507445496509794318
 GameObject:
   m_ObjectHideFlags: 0

@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4597256490043360469}
   - component: {fileID: 617385137609478603}
+  - component: {fileID: 3668750288474177661}
   m_Layer: 0
   m_Name: MediumEnemy
   m_TagString: Untagged
@@ -131,6 +132,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ATMToControl: {fileID: 4597256490043360469}
+--- !u!65 &3668750288474177661
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2700198439193732151}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3000941, y: 0.365837, z: 0.28418204}
+  m_Center: {x: -0.020153565, y: -0.06968195, z: -0.035718974}
 --- !u!1001 &5289374934280883999
 PrefabInstance:
   m_ObjectHideFlags: 0
