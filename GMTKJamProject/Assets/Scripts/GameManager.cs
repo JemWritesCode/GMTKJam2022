@@ -55,10 +55,10 @@ public class GameManager : MonoBehaviour {
   }
 
   public void SetPlayerHandsPower(float power) {
-    playerHandsPower = power;
+    playerHandsPower = Mathf.Clamp(power, 0f, playerHandsLevel * 1f);
 
     // TODO: lol.
-    playerJazzHands.SetHandsScale(power);
+    playerJazzHands.SetHandsScale(playerHandsPower);
 
     UIManager.Instance.SetHandsLevel(
         handsLevelNames[Mathf.Clamp(playerHandsLevel, 0, handsLevelNames.Count - 1)], playerHandsPower);
