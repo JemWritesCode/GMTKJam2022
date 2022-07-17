@@ -25,14 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028225718751328009}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.8782043, y: 0.20024109, z: -7.68}
-  m_LocalScale: {x: 2.4672, y: 2.4672, z: 2.4672}
+  m_LocalScale: {x: 3.9719453, y: 3.9719453, z: 3.9719453}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2139534820218924600}
   - {fileID: 5569135065440922265}
-  - {fileID: 1499865889235685810}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,72 +145,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1036388607911883723
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7486247598853670888}
-    m_Modifications:
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.002
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0404
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3714408729877743440, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: CollisionModule.type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8790063293768291739, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-      propertyPath: m_Name
-      value: CreditCardParticle Stream
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
---- !u!4 &1499865889235685810 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1923430557690569337, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
-  m_PrefabInstance: {fileID: 1036388607911883723}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6901084261155527559
 PrefabInstance:
   m_ObjectHideFlags: 0
