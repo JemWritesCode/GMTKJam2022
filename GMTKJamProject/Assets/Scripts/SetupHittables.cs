@@ -39,7 +39,7 @@ public class SetupHittables : MonoBehaviour {
 
   void AddExplosion(GameObject hittable) {
     Debug.Log($"Adding explosion to {hittable.name}");
-    GameObject explosion = Instantiate(hittableDeathExplosion, hittable.transform.transform);
+        GameObject explosion = Instantiate(hittableDeathExplosion, hittable.transform.position, hittable.transform.rotation); ;
     explosion.SetActive(true);
     Destroy(explosion, 3f);
   }

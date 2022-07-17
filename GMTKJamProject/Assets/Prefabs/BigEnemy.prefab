@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 4920440739232121572}
   - component: {fileID: 3821142619219502593}
   - component: {fileID: 850793686}
+  - component: {fileID: 7567061101777887630}
   m_Layer: 0
   m_Name: BigEnemy
   m_TagString: Hittable
@@ -233,6 +234,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.26087528, y: 0.39622805, z: 0.25903937}
   m_Center: {x: -0.0015270554, y: 0.20701589, z: 0.0019620364}
+--- !u!114 &7567061101777887630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4052931189719855214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49f069f28543ed41837e81c5d6abf5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 1000
+  healthCurrent: 300
+  healthDamageOnCollide: 25
+  onCollideAddRelativeForcePower: 300
+  onCollideAddUpwardsForcePower: 200
+  playerHandsPowerOffsetOnDeath: 1
+  playerCashOffsetOnDeath: 1500
 --- !u!1001 &75484221616004885
 PrefabInstance:
   m_ObjectHideFlags: 0
