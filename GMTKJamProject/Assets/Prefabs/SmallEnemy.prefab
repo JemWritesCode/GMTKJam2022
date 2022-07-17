@@ -197,6 +197,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3714408729877743440, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
+      propertyPath: CollisionModule.type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8790063293768291739, guid: 267d015b4b76ae54292b28660c4c8391, type: 3}
       propertyPath: m_Name
       value: CreditCardParticle Stream
