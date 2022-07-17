@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour {
         "Diamond hands"
       };
 
-  float _playerCash = 0f;
-  int _playerHandsLevel = 1;
-  float _playerHandsPower = 0f;
+  float playerCash = 0f;
+  int playerHandsLevel = 0;
+  float playerHandsPower = 0f;
 
   void Awake() {
     if (Instance && Instance != this) {
@@ -37,36 +37,37 @@ public class GameManager : MonoBehaviour {
 
   void Start() {
     SetPlayerCash(0f);
-    SetPlayerHandsPower(1f);
+    SetPlayerHandsPower(0f);
+    SetPlayerHandsLevel(0);
   }
 
   public void SetPlayerCash(float cash) {
-    _playerCash = cash;
-    UIManager.Instance.SetFundsAmount(_playerCash);
+    playerCash = cash;
+    UIManager.Instance.SetFundsAmount(playerCash);
   }
 
   public void OffsetPlayerCash(float offset) {
-    SetPlayerCash(_playerCash + offset);
+    SetPlayerCash(playerCash + offset);
   }
 
   public void SetPlayerHandsPower(float power) {
-    _playerHandsPower = power;
+    playerHandsPower = power;
 
     // TODO: lol.
     playerJazzHands.SetHandsScale(power);
 
     UIManager.Instance.SetHandsLevel(
-        handsLevelNames[Mathf.Clamp(_playerHandsLevel, 0, handsLevelNames.Count - 1)], _playerHandsPower);
+        handsLevelNames[Mathf.Clamp(playerHandsLevel, 0, handsLevelNames.Count - 1)], playerHandsPower);
   }
 
   public void OffsetPlayerHandsPower(float offset) {
-    SetPlayerHandsPower(_playerHandsPower + offset);
+    SetPlayerHandsPower(playerHandsPower + offset);
   }
 
   public void SetPlayerHandsLevel(int level) {
-    _playerHandsLevel = level;
+    playerHandsLevel = level;
 
     UIManager.Instance.SetHandsLevel(
-        handsLevelNames[Mathf.Clamp(_playerHandsLevel, 0, handsLevelNames.Count - 1)], _playerHandsPower);
+        handsLevelNames[Mathf.Clamp(playerHandsLevel, 0, handsLevelNames.Count - 1)], playerHandsPower);
   }
 }
