@@ -177,6 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4920440739232121572}
+  - component: {fileID: 3821142619219502593}
   m_Layer: 0
   m_Name: BigEnemy
   m_TagString: Untagged
@@ -202,6 +203,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3821142619219502593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4052931189719855214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e55d6fb1a39a4fbb1823a7c613a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ATMToControl: {fileID: 4920440739232121572}
 --- !u!1001 &9026868027657113203
 PrefabInstance:
   m_ObjectHideFlags: 0
