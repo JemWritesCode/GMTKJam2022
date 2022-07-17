@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
-    [SerializeField] float dmgDealtToPlayer = 20f;
+    float dmgDealtToPlayer = -20f;
     GameManager gameManager;
     private void OnParticleCollision(GameObject other)
     {
