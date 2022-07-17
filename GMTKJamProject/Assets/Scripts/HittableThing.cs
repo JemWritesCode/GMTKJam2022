@@ -42,7 +42,7 @@ public class HittableThing : MonoBehaviour {
 
     if (healthCurrent <= 0f) {
       OnHittableDeath?.Invoke(this, this.gameObject);
-      Destroy(gameObject, 3f);
+      Destroy(gameObject, 1f);
     }
   }
 }
