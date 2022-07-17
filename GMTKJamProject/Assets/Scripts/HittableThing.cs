@@ -17,9 +17,11 @@ public class HittableThing : MonoBehaviour {
   public event EventHandler<GameObject> OnHittableDeath;
 
   Rigidbody _rigidBody;
+    public AudioClip soundHit;
 
   void Awake() {
     _rigidBody = GetComponent<Rigidbody>();
+        GetComponent<AudioSource>().clip = soundHit;
   }
 
   private void OnCollisionEnter(Collision collision) {
@@ -27,6 +29,7 @@ public class HittableThing : MonoBehaviour {
       return;
     }
 
+        AudioSource.PlayClipAtPoint(soundHit, collision.collider.ClosestPoint(collision.collider.transform.position));
     if (healthCurrent <= 0f) {
       // Already dead, don't add more force... unless?
       return;
